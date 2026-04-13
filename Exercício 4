@@ -1,0 +1,22 @@
+package main
+
+import "fmt"
+
+func main() {
+	for {
+		var n int
+		fmt.Scan(&n)
+		if n <= 0 {
+			break
+		}
+		i := 1
+		for i*i < n {
+			i++
+		}
+		if i*i == n {
+			fmt.Println("Sim")
+		} else {
+			fmt.Println("Nao")
+		}
+	}
+}
