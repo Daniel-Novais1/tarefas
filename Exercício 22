@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+func main() {
+	s := 0.0
+	num1 := 37.0
+	num2 := 38.0
+	den := 1.0
+
+	for i := 0; i < 37; i++ {
+		s += (num1 * num2) / den
+		num1--
+		num2--
+		den++
+	}
+
+	fmt.Println(s)
+}
