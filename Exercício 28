@@ -1,0 +1,17 @@
+package main
+
+import "fmt"
+
+func main() {
+	s := 0.0
+	sinal := 1.0
+	den := 1.0
+
+	for i := 0; i < 51; i++ {
+		s += sinal / (den * den * den)
+		sinal *= -1
+		den += 2
+	}
+
+	fmt.Println(s)
+}
