@@ -1,0 +1,36 @@
+package main
+
+import "fmt"
+
+func main() {
+	var n int
+	fmt.Scan(&n)
+
+	aprov := 0
+	exame := 0
+	reprov := 0
+	somaClasse := 0.0
+
+	for i := 0; i < n; i++ {
+		var a, b float64
+		fmt.Scan(&a, &b)
+		media := (a + b) / 2
+		somaClasse += media
+
+		if media <= 3 {
+			fmt.Println("Reprovado")
+			reprov++
+		} else if media < 7 {
+			fmt.Println("Exame")
+			exame++
+		} else {
+			fmt.Println("Aprovado")
+			aprov++
+		}
+	}
+
+	fmt.Println(aprov)
+	fmt.Println(exame)
+	fmt.Println(reprov)
+	fmt.Println(somaClasse / float64(n))
+}
