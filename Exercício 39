@@ -1,0 +1,35 @@
+package main
+
+import "fmt"
+
+func main() {
+	var n int = 90
+
+	var numero, peso int
+	var maiorPeso, menorPeso int
+	var numMaior, numMenor int
+
+	for i := 0; i < n; i++ {
+		fmt.Scan(&numero, &peso)
+
+		if i == 0 {
+			maiorPeso = peso
+			menorPeso = peso
+			numMaior = numero
+			numMenor = numero
+		}
+
+		if peso > maiorPeso {
+			maiorPeso = peso
+			numMaior = numero
+		}
+
+		if peso < menorPeso {
+			menorPeso = peso
+			numMenor = numero
+		}
+	}
+
+	fmt.Println(numMaior, maiorPeso)
+	fmt.Println(numMenor, menorPeso)
+}
