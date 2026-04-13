@@ -1,0 +1,16 @@
+package main
+
+import "fmt"
+
+func main() {
+	var carlos float64
+	fmt.Scan(&carlos)
+	joao := carlos / 3
+	meses := 0
+	for joao <= carlos {
+		carlos *= 1.02
+		joao *= 1.05
+		meses++
+	}
+	fmt.Println(meses)
+}
