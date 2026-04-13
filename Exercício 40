@@ -1,0 +1,29 @@
+package main
+
+import "fmt"
+
+func main() {
+	preco := 6.0
+	ingressos := 130
+	despesa := 300.0
+
+	maxLucro := -999999.0
+	melhorPreco := 0.0
+	melhorIngressos := 0
+
+	for preco >= 1.0 {
+		lucro := preco*float64(ingressos) - despesa
+		fmt.Println(preco, ingressos, lucro)
+
+		if lucro > maxLucro {
+			maxLucro = lucro
+			melhorPreco = preco
+			melhorIngressos = ingressos
+		}
+
+		preco -= 0.6
+		ingressos += 30
+	}
+
+	fmt.Println(maxLucro, melhorPreco, melhorIngressos)
+}
