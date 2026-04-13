@@ -1,0 +1,44 @@
+package main
+
+import "fmt"
+
+func main() {
+	total := 0
+	mais50 := 0
+	somaAlt := 0.0
+	countAlt := 0
+	peso40 := 0
+
+	for {
+		var idade int
+		var altura, peso float64
+		fmt.Scan(&idade, &altura, &peso)
+
+		total++
+		if idade > 50 {
+			mais50++
+		}
+		if idade >= 10 && idade <= 20 {
+			somaAlt += altura
+			countAlt++
+		}
+		if peso < 40 {
+			peso40++
+		}
+
+		var op int
+		fmt.Scan(&op)
+		if op != 1 {
+			break
+		}
+	}
+
+	mediaAlt := 0.0
+	if countAlt > 0 {
+		mediaAlt = somaAlt / float64(countAlt)
+	}
+
+	fmt.Println(mais50)
+	fmt.Println(mediaAlt)
+	fmt.Println(float64(peso40) / float64(total) * 100)
+}
