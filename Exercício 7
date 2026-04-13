@@ -1,0 +1,49 @@
+package main
+
+import "fmt"
+
+func main() {
+	sum := 0
+	count := 0
+	max := -999999
+	min := 999999
+	sumPar := 0
+	countPar := 0
+	countImpar := 0
+
+	for {
+		var n int
+		fmt.Scan(&n)
+		if n == 30000 {
+			break
+		}
+		sum += n
+		count++
+		if n > max {
+			max = n
+		}
+		if n < min {
+			min = n
+		}
+		if n%2 == 0 {
+			sumPar += n
+			countPar++
+		} else {
+			countImpar++
+		}
+	}
+
+	fmt.Println(sum)
+	fmt.Println(count)
+	fmt.Println(float64(sum) / float64(count))
+	fmt.Println(max)
+	fmt.Println(min)
+
+	if countPar > 0 {
+		fmt.Println(float64(sumPar) / float64(countPar))
+	} else {
+		fmt.Println(0)
+	}
+
+	fmt.Println(float64(countImpar) / float64(count) * 100)
+}
