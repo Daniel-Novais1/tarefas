@@ -1,0 +1,45 @@
+package main
+
+import "fmt"
+
+func main() {
+	var cpf string
+	fmt.Scan(&cpf)
+
+	soma := 0
+	peso := 2
+
+	for i := 8; i >= 0; i-- {
+		d := int(cpf[i] - '0')
+		soma += d * peso
+		peso++
+	}
+
+	resto := soma % 11
+	d1 := 0
+	if resto >= 2 {
+		d1 = 11 - resto
+	}
+
+	soma = 0
+	peso = 2
+
+	for i := 9; i >= 0; i-- {
+		var d int
+		if i == 9 {
+			d = d1
+		} else {
+			d = int(cpf[i] - '0')
+		}
+		soma += d * peso
+		peso++
+	}
+
+	resto = soma % 11
+	d2 := 0
+	if resto >= 2 {
+		d2 = 11 - resto
+	}
+
+	fmt.Println(d1, d2)
+}
