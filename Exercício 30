@@ -1,0 +1,13 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	for r := 0.0; r <= 20.0; r += 0.5 {
+		v := (4.0 / 3.0) * math.Pi * r * r * r
+		fmt.Println(r, v)
+	}
+}
