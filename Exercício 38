@@ -7,12 +7,12 @@ func main() {
 	fmt.Scan(&cpf)
 
 	soma := 0
-	peso := 2
+	peso := 10
 
-	for i := 8; i >= 0; i-- {
+	for i := 0; i < 9; i++ {
 		d := int(cpf[i] - '0')
 		soma += d * peso
-		peso++
+		peso--
 	}
 
 	resto := soma % 11
@@ -22,18 +22,14 @@ func main() {
 	}
 
 	soma = 0
-	peso = 2
+	peso = 11
 
-	for i := 9; i >= 0; i-- {
-		var d int
-		if i == 9 {
-			d = d1
-		} else {
-			d = int(cpf[i] - '0')
-		}
+	for i := 0; i < 9; i++ {
+		d := int(cpf[i] - '0')
 		soma += d * peso
-		peso++
+		peso--
 	}
+	soma += d1 * 2
 
 	resto = soma % 11
 	d2 := 0
@@ -41,5 +37,9 @@ func main() {
 		d2 = 11 - resto
 	}
 
-	fmt.Println(d1, d2)
+	if int(cpf[9]-'0') == d1 && int(cpf[10]-'0') == d2 {
+		fmt.Println("Valido")
+	} else {
+		fmt.Println("Invalido")
+	}
 }
